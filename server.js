@@ -7,7 +7,7 @@ const io = new Server(server);
 const fs = require("fs");
 
 let nomsJoueurs = [];
-const nbJoueursMax = 4;
+const nbJoueursMax = 1000;
 
 server.listen(8888, () => {
     console.log("Le serveur écoute sur le port 8888");
@@ -49,16 +49,15 @@ io.on("connection", (socket) => {
         });
     });
 
-    socket.on("entree", (nomJoueur) => {
+    socket.on('entree', (nomJoueur) => {
         if (nomsJoueurs.length < nbJoueursMax) {
             nomsJoueurs.push(nomJoueur);
             console.log(`${nomJoueur} est entré dans la partie`);
-            io.emit("updateJoueurs", { nomsJoueurs });
+            io.emit('updateJoueurs', { nomsJoueurs });
+            socket.emit('entree', nomsJoueurs.length - 1);
+            
         } else {
-            socket.emit("message", {
-                nomJoueur: "Serveur",
-                message: "La partie est complète.",
-            });
+            socket.emit('message', { nom: 'Serveur', message: 'La partie est complète.' });
         }
     });
 
