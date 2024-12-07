@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "latest",
     "http": "latest",
-    "socket.io": "latest"
+    "socket.io": "latest",
+    "nodemon": "latest"
   }
 }
