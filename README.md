@@ -1,2 +1,2 @@
 # HEX-Game
-Je vous adore purée
+Je vous adore purée.
