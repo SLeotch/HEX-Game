@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "http": "latest",
+    "socket.io": "latest"
+  }
+}
