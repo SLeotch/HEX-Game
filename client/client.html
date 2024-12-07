@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Jeu de Hex CHANAUD_Leo</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/client/hexagones.js"></script>
+        <script src="/client/script.js"></script>
+        <link rel="stylesheet" type="text/css" href="/client/style.css" />
+    </head>
+    <body>
+        <h2>JEU DE HEX</h2>
+        <br />
+        <label> Username <input id="nom" type="text" /> </label>
+        <button type="button" onClick="entrerDansLaPartie()">
+            Entrer dans la partie
+        </button>
+        <button type="button" onClick="sortirDeLaPartie()">
+            Sortir de la partie
+        </button>
+        <br />
+        <br />
+        <textarea
+            id="nomsJoueurs"
+            name="nomsJoueurs"
+            rows="5"
+            cols="30"
+            readonly
+        ></textarea>
+        <h3>Messagerie</h3>
+        <textarea
+            id="messagesDisplay"
+            name="messages"
+            rows="5"
+            cols="30"
+            readonly
+        ></textarea>
+        <br />
+        <input id="messageInput" type="text" placeholder="Votre message" />
+        <button type="button" onClick="envoyerMessage()">
+            Envoyer le message
+        </button>
+        <button type="button" onClick="clearLog()">
+            Effacer la discussion
+        </button>
+        <br />
+        <br />
+        <div id="tablier"></div>
+    </body>
+</html>
