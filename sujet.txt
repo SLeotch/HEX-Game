@@ -1,0 +1,46 @@
+HAI305I - 2024-2025 - Projet JavaScript (obligatoire - coeff. 15%) - Pierre Pompidor
+
+Fonctionnalités à implémenter
+
+Etape 1 : finir de programmer un jeu de Hex en ligne entre deux joueurs
+
+• Messagerie, entrées et sorties des joueurs
+• Affichage du tablier de Hex avec D3.js
+• Parties fonctionnelles entre deux joueurs connectés sur deux ordinateurs différents
+un projet réunissant ses fonctionnalités sera sans doute noté 12/20 (et sous contrainte que les codes n’auront pas été
+essentiellement produits par des IA...).
+
+Etape 2 : implémenter le mode spectateur
+
+Un client qui se connecte au serveur et ne peut pas participer à la partie (car il y a déjà deux joueurs) peut visionner
+la partie en cours :
+• voir l’état courant de la partie
+• revenir en arrière et repartir en avant
+un projet rajoutant cette fonctionnalité sera sans doute noté 17/20 (et sous contrainte que les codes n’auront pas été
+essentiellement produits par des IA...).
+
+Etape 3 : ...
+
+A vous de voir si vous désirez rajouter des fonctionnalités supplémentaires (et à condition que les spécifications
+précédentes aient été réalisées).
+
+Contraintes :
+
+Seuls la plateforme Node.js, le framework express et les bibliothèques socket.io et D3.js ainsi que l’API DOM de
+JavaScript peuvent être utilisés. L’utilisation de jQuery et des balises canvas sont interdites (pour envoyer une
+requête HTTP au serveur, utilisez fetch()).
+Les codes (client et serveur) doivent être basés sur les schémas de programmation vus en cours (diaporamas) et
+donnés comme ressources.
+Le projet doit être préférentiellement effectué en binôme (les trinômes sont interdits)
+Rendu du projet :
+Le rendu du projet se fera via une archive (zip, tar, rar...) sur le moodle de l’UE jusqu’au dimanche 15 décembre
+23h59.
+L’archive devra contenir les codes et un fichier README indiquant les noms des deux participants au projet, les
+fonctionnalités implémentées et toute information que vous jugerez utile.
+Les projets massivement similaires ne seront pas notés (il sera cela-dit normal que les codes hors étape 2 aient un
+niveau raisonnable de similitudes car ils seront basés sur les mêmes squelettes).
+Prise en compte du projet dans les modalités de contrôle de connaissance :
+Première session : 0.7 * note écrit + 0.15 * projet JS + 0.15 * QCM PHP
+Seconde session : note de l’écrit de seconde session
+(Ce projet ne sera donc pas pris en compte lors de la seconde session si vous deviez participer à celle-ci.)
+1
