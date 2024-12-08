@@ -17,10 +17,40 @@ function genereDamier(rayon, nbLignes, nbColonnes) {
     const largeur = (nbColonnes + 11) * (1.5 * rayon) + rayon;
     const longueur = (nbLignes + 1) * (Math.sqrt(3) * rayon) + rayon;
 
-    d3.select("#tablier")
+    const svg = d3
+        .select("#tablier")
         .append("svg")
         .attr("width", largeur)
         .attr("height", longueur);
+
+    // Ajouter les bordures
+    svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", 5)
+        .attr("height", longueur - 45)
+        .attr("fill", "red");
+
+    svg.append("rect")
+        .attr("x", largeur - 145)
+        .attr("y", 0)
+        .attr("width", 5)
+        .attr("height", longueur - 45)
+        .attr("fill", "red");
+
+    svg.append("rect")
+        .attr("x", -140)
+        .attr("y", 0)
+        .attr("width", largeur)
+        .attr("height", 5)
+        .attr("fill", "blue");
+
+    svg.append("rect")
+        .attr("x", -140)
+        .attr("y", longueur - 50)
+        .attr("width", largeur)
+        .attr("height", 5)
+        .attr("fill", "blue");
 
     var hexagone = creeHexagone(rayon);
     for (var ligne = 0; ligne < nbLignes; ligne++) {
@@ -38,28 +68,24 @@ function genereDamier(rayon, nbLignes, nbColonnes) {
                     40;
                 d += x + "," + y + " ";
             }
-            d3.select("svg")
-                .append("polygon")
+            svg.append("polygon")
                 .attr("points", d.trim())
                 .attr("stroke", "black")
                 .attr("fill", "white")
                 .attr("id", "h" + (ligne * nbColonnes + colonne))
                 .on("click", function () {
-                    console.log(d3.select(this).attr("id"));
-                    const numHexagone = parseInt(
+                    let numHexagone = parseInt(
                         d3.select(this).attr("id").substring(1)
-                    );
-                    const nomJoueur = document.getElementById("nom").value;
-                    if (nomJoueur) {
+                    ); // pour enlever la lettre en préfixe
+                    console.log(numJoueur);
+                    if (numJoueur != null) {
+                        console.log("haha");
                         socket.emit("selectionHexagone", {
-                            numJoueur: nomJoueur,
+                            numJoueur,
                             numHexagone,
                         });
                     }
                 });
         }
     }
-    socket.on("colorierHexagone", (data) => {
-        d3.select("#h" + data.numHexagone).attr("fill", data.couleur);
-    });
 }
